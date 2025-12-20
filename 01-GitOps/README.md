@@ -2,6 +2,9 @@
 
 ## Video reference for this lecture is the following:
 
+[![Watch the video](https://img.youtube.com/vi/dF6q-2YbMoU/maxresdefault.jpg)](https://youtu.be/dF6q-2YbMoU)
+
+
 ---
 ## ⭐ Support the Project  
 If this **repository** helps you, give it a ⭐ to show your support and help others discover it! 
@@ -59,6 +62,8 @@ Argo CD is **not GitOps itself**, but an implementation that helps organizations
 
 ### The World Before GitOps
 
+![Alt text](/images/1a.png)
+
 Before modern cloud-native platforms, application delivery did not follow a single, consistent operating model.
 
 While **application code** was typically well managed in Git, the systems required to build, deploy, and run that code were **not governed with the same discipline**.
@@ -113,6 +118,8 @@ Before GitOps as defined by the CNCF, application delivery and operations suffer
 ---
 
 ## What Is GitOps
+
+![Alt text](/images/1b.png)
 
 GitOps is an **operating model** for managing applications and infrastructure.
 
@@ -206,6 +213,8 @@ GitOps exists because managing different parts of the system with **different wo
 
 ## Repository Structure and Ownership in GitOps
 
+![Alt text](/images/1c.png)
+
 In practice, GitOps commonly separates repositories based on **clear ownership boundaries between application development and platform operations**. This separation allows teams to move independently while still adhering to the same Git-driven operating model. While this is a **recommended best practice**, it remains context driven rather than mandatory.
 
 ---
@@ -261,6 +270,8 @@ This repository is primarily owned by **DevOps or platform teams**, who are resp
 ## GitOps Workflow: From Code to Continuous Reconciliation
 
 *(CNCF Perspective)*
+
+![Alt text](/images/1d.png)
 
 This section brings together the concepts discussed so far and explains how GitOps works **end to end**.
 
@@ -444,6 +455,8 @@ This explains **why control flows from Git to the cluster**, **why CI does not d
 ---
 
 ## Deployment Models in Practice
+
+![Alt text](/images/1e.png)
 
 In real-world systems, deployments typically follow one of two models:
 
