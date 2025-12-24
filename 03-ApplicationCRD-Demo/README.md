@@ -66,6 +66,8 @@ This lecture establishes the **end-to-end mental model** required before moving 
 
 ## Kubernetes Resource Model and CRDs
 
+![Alt text](/images/3a.png)
+
 Before we start discussing **Application CRDs**, it is important to first build a **strong mental model** of how Kubernetes resources work, and how Kubernetes can be extended. This section lays the foundation for understanding *why* Argo CD defines its own CRDs and *why* controllers are central to GitOps.
 
 ---
@@ -269,6 +271,8 @@ Once we understand this, Application CRDs will feel natural rather than magical.
 
 ## From CRDs to Application CRDs
 
+![Alt text](/images/3b.png)
+
 In the previous section, we established how Kubernetes works internally using **Resource Definitions**, **Resources**, **CRDs**, and **Controllers**.
 
 We saw that:
@@ -432,6 +436,8 @@ The attached diagram visualizes the **three most common patterns** you will enco
 
 ### Microservices Architecture
 
+![Alt text](/images/3c.png)
+
 In a **microservices architecture**, an application is decomposed into multiple independently deployable services.
 
 As shown in the diagram:
@@ -453,6 +459,8 @@ This is the **most common and recommended pattern** in modern GitOps-driven plat
 
 ### Multi-Tier Architecture
 
+![Alt text](/images/3d.png)
+
 In a **multi-tier architecture** (for example: web tier and app tier), deployability is usually defined at the **tier level**, not the individual component level.
 
 As shown in the diagram:
@@ -461,17 +469,22 @@ As shown in the diagram:
 
   * `web-tier`
   * `app-tier`
+
 * Each tier:
 
   * Has its **own configuration repository**
   * Is managed by a **separate Argo CD Application**
   * Can be deployed and rolled back independently
 
+The **database tier** in this example is assumed to be a **managed cloud service** (for example, **Amazon RDS**), and is therefore **not deployed or managed by Argo CD**.
+
+Kubernetes workloads typically connect to such external databases using an **ExternalName Service**, which provides a stable DNS name inside the cluster without managing the database lifecycle.
+
 In this model:
 
 > **One tier = one Argo CD Application**
 
-This approach is common in transitional architectures or systems modernized incrementally toward microservices.
+This pattern is common in **transitional architectures** and systems that are being **incrementally modernized toward microservices**, while relying on managed cloud services for stateful components.
 
 ---
 
@@ -761,17 +774,25 @@ You should now see the **Guestbook application running**.
 ### Key Argo CD Status Concepts
 
 **Sync Status**
-Indicates whether **live state matches desired state**.
+Indicates whether **live state matches desired state in Git**.
 
 * **Synced** – Live state matches Git
-* **OutOfSync** – Drift detected
-* **Progressing** – Reconciliation in progress
+* **OutOfSync** – Drift detected between Git and cluster
+* **Unknown** – Argo CD cannot determine sync state
+
+> Sync status answers: *“Does the cluster match what’s in Git?”*
+
+---
 
 **Health Status**
-Indicates **runtime health**, independent of sync.
+Indicates **runtime health of the application**, independent of sync.
 
 * **Healthy** – Application running as expected
-* **Degraded** – Application synced but unhealthy (for example, crashing pods)
+* **Progressing** – Application is rolling out or reconciling
+* **Degraded** – Application synced but unhealthy (for example, crash loops)
+* **Missing** – Resources defined in Git are not found in the cluster
+* **Suspended** – Resource is paused (for example, a suspended CronJob)
+* **Unknown** – Health cannot be determined
 
 > An application can be **Synced but Degraded**.
 > Sync answers *“did we apply?”*, health answers *“is it working?”*.
