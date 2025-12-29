@@ -7,6 +7,35 @@
 If this **repository** helps you, give it a ⭐ to show your support and help others discover it! 
 
 ---
+## 📑 Table of Contents
+
+* [Introduction](#introduction)  
+* [Demo: Production-Style GitOps with Argo CD](#demo-production-style-gitops-with-argo-cd)  
+  * [Demo Objective: What We Will Build and Prove](#demo-objective-what-we-will-build-and-prove)  
+  * [Step 1: Create Two Private GitHub Repositories](#step-1-create-two-private-github-repositories)   
+  * [Step 2: Create a GitHub Personal Access Token (PAT)](#step-2-create-a-github-personal-access-token-pat)  
+  * [Step 3: Prepare Local Project Structure](#step-3-prepare-local-project-structure)  
+  * [Step 4: Create a Private DockerHub Repository and Token](#step-4-create-a-private-dockerhub-repository-and-token)  
+  * [Step 5: Build and Push the Container Image](#step-5-build-and-push-the-container-image)  
+  * [Step 6: Create Kubernetes Namespace and Image Pull Secret](#step-6-create-kubernetes-namespace-and-image-pull-secret)   
+  * [Step 7: Kubernetes Manifests (Config Repository)](#step-7-kubernetes-manifests-config-repository)  
+  * [Step 8: Create the Argo CD Application (Config Repository)](#step-8-create-the-argo-cd-application-config-repository)  
+  * [Step 9: Push Code to Both Repositories](#step-9-push-code-to-both-repositories)  
+  * [Step 10: Add Private Repository Credentials to Argo CD](#step-10-add-private-repository-credentials-to-argo-cd)  
+  * [Step 11: Synchronization and Verification](#step-11-synchronization-and-verification)  
+* [Argo CD Features With Demos](#argo-cd-features-with-demos)  
+  * [Automated Sync](#automated-sync)  
+    * [Demo: Automated Sync](#demo-automated-sync)  
+  * [Pruning](#pruning)  
+    * [Demo: Pruning](#demo-pruning)  
+  * [Self-healing](#self-healing)  
+    * [Demo: Self-healing](#demo-self-healing)  
+  * [Enabling All Three Features Together](#enabling-all-three-features-together)  
+  * [Final Mental Model](#final-mental-model)  
+* [Conclusion](#conclusion)  
+* [References](#references)  
+
+---
 
 ## Introduction
 
