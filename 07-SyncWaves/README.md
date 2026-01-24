@@ -2,6 +2,8 @@
 
 ## Video reference for this lecture is the following:
 
+[![Watch the video](https://img.youtube.com/vi/SrgaMOuiqyY/maxresdefault.jpg)](https://www.youtube.com/watch?v=SrgaMOuiqyY&ab_channel=CloudWithVarJosh)
+
 ---
 ## ⭐ Support the Project  
 If this **repository** helps you, give it a ⭐ to show your support and help others discover it! 
@@ -48,6 +50,8 @@ However, deterministic ordering alone does not guarantee correct application beh
 ---
 
 ## How Kubernetes resources are created
+
+![Alt text](/images/7a.png)
 
 Before understanding why features like Sync Waves exist, it is important to understand **how Kubernetes resources are created and applied**.
 There are **two fundamentally different execution models**, depending on whether Argo CD is used or not.
@@ -127,6 +131,7 @@ From the client’s perspective, the operation is complete once the API server a
 
 ### **2. Resources created using Argo CD (control-plane–driven model)**
 
+![Alt text](/images/7b.png)
 When Argo CD is used, but **no Sync Hooks or Sync Waves are defined**, it introduces **structure, determinism, and repeatability beyond kubectl**, while still treating **API server acceptance as the completion signal**.
 
 At the start of a Sync operation, Argo CD:
@@ -242,6 +247,8 @@ This distinction is foundational for understanding **why Sync Waves exist**, whi
 
 ## Why Sync Waves?
 
+![Alt text](/images/7c.png)
+
 During a Sync operation, Argo CD applies all manifests belonging to an Application as part of a **single synchronization cycle**.
 If no additional controls are defined, Argo CD relies entirely on its **default ordering rules** based on phase, kind, and resource name.
 
@@ -342,6 +349,8 @@ Argo CD has **no visibility into component-level intent** unless that intent is 
 ---
 
 ## What Sync Waves are and how they work
+
+![Alt text](/images/7d.png)
 
 **Sync Waves** are Argo CD’s mechanism for expressing **intent-aware ordering** when applying resources that belong to a **single Application**, specifically **inside the Sync phase**.
 
