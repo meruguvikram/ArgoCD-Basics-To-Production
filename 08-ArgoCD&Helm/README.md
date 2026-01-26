@@ -179,7 +179,7 @@ This demo assumes you already understand **Helm basics** such as:
 
 If you need a refresher, I have already covered Helm from **Basics to Production** on this channel with multiple demos.
 
-**GitHub notes:**: [https://github.com/CloudWithVarJosh/CKA-Certification-Course-2025/tree/main/Day%2043](https://github.com/CloudWithVarJosh/CKA-Certification-Course-2025/tree/main/Day%2043)
+**GitHub notes:**: [https://github.com/CloudWithVarJosh/CKA-Certification-Course-2025/tree/main/Day%2043](https://github.com/CloudWithVarJosh/CKA-Certification-Course-2025/tree/main/Day%2043)  
 **YouTube video:**: [https://www.youtube.com/watch?v=yvV_ZUottOM](https://www.youtube.com/watch?v=yvV_ZUottOM)
 
 ---
