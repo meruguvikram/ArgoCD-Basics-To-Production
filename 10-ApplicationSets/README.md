@@ -31,9 +31,8 @@ If this **repository** helps you, give it a ⭐ to show your support and help ot
   - [Matrix Generator (Demo 5)](#4-matrix-generator-demo-5)  
 - [Choosing the Right ApplicationSet Generator](#choosing-the-right-applicationset-generator)  
 - [Other ApplicationSet Generators (for completeness)](#other-applicationset-generators-for-completeness)  
-
 - [Conclusion](#conclusion)  
-- [References](#references)  
+- [References](#references)   
 
 ---
 
