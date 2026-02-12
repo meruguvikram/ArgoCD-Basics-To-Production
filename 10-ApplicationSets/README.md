@@ -1,6 +1,8 @@
-# ApplicationSets in Argo CD
+# Argo CD ApplicationSets Explained | Scaling GitOps Across Clusters & Microservices
 
 ## Video reference for this lecture is the following:
+
+[![Watch the video](https://img.youtube.com/vi/FS__bq6I4m0/maxresdefault.jpg)](https://www.youtube.com/watch?v=FS__bq6I4m0&ab_channel=CloudWithVarJosh)
 
 
 ---
@@ -44,6 +46,8 @@ To understand why ApplicationSets exist, we must first understand **multi-cluste
 
 ## What is Multi-Cluster in Kubernetes?
 
+![Alt text](/images/10a.png)
+
 Multi-cluster is a **generic term** that simply means operating more than one Kubernetes cluster.
 However, in this context, multi-cluster refers specifically to **multiple Kubernetes clusters that are logically related and managed together**.
 
@@ -74,6 +78,8 @@ As organizations grow, new clusters are added regularly to support scale, isolat
 
 ## Why Plain Argo CD Applications Do Not Scale
 
+![Alt text](/images/10b.png)
+
 At this stage, GitOps complexity increases significantly.
 
 #### Operational challenges without ApplicationSets
@@ -101,6 +107,8 @@ ApplicationSets address these problems by making **Argo CD Application creation 
 ---
 
 ## What are ApplicationSets?
+
+![Alt text](/images/10c.png)
 
 An **ApplicationSet** is an Argo CD custom resource that defines **how Argo CD Applications should be created at scale**.
 
@@ -149,6 +157,8 @@ Once you understand what an ApplicationSet is, its responsibilities become clear
 
 ## Demo Introduction
 
+![Alt text](/images/10d.png)
+
 In this demo, we will work with an application called **app1** that is accessed by users in **India** and the **United States**.
 
 To meet real-world production requirements, app1 is deployed in **two AWS regions**:
@@ -184,14 +194,15 @@ ApplicationSets help address this challenge by centralizing intent and reducing 
 
 Before proceeding, ensure the following tools and concepts are in place.
 
-#### 1. AWS CLI and eksctl
+#### 1. AWS CLI, eksctl, and Helm
 
-You must have the AWS CLI and eksctl installed and configured.
+You must have the AWS CLI, eksctl, and Helm installed and configured.
 
 Official documentation:
 
 * AWS CLI: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 * eksctl: [https://eksctl.io/installation/](https://eksctl.io/installation/)
+* Helm: [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 
 ---
 
