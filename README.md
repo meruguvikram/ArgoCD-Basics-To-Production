@@ -11,6 +11,9 @@ This course focuses on **GitOps principles first**, and then shows how Argo CD i
 
 ---
 
+### Course Introduction: 
+[![Watch the video](https://img.youtube.com/vi/Q5RvLl6KDqU/maxresdefault.jpg)](https://www.youtube.com/watch?v=Q5RvLl6KDqU&ab_channel=CloudWithVarJosh)
+
 ## YouTube Playlist for This Course
 [Argo CD: Basics to Production Playlist](https://www.youtube.com/playlist?list=PLmPit9IIdzwSR-4FP65oP3AoZCKBvbwXg)
 
